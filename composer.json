@@ -9,6 +9,12 @@
       "email": "marien@eosnewmedia.de"
     }
   ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:chris-doehring/JSON-API-Common.git"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "Enm\\JsonApi\\Client\\": "src"
@@ -20,7 +26,8 @@
     }
   },
   "require": {
-    "enm/json-api-common": "^3.0",
+    "ext-json": "*",
+    "enm/json-api-common": "dev-master",
     "psr/http-factory": "^1.0",
     "psr/http-client": "^1.0"
   },
