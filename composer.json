@@ -1,5 +1,5 @@
 {
-  "name": "enm/json-api-client",
+  "name": "chris-doehring/json-api-client",
   "description": "Abstract client-side php implementation of the json api specification (jsonapi.org)",
   "type": "library",
   "license": "MIT",
@@ -7,12 +7,6 @@
     {
       "name": "Philipp Marien",
       "email": "marien@eosnewmedia.de"
-    }
-  ],
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "git@github.com:chris-doehring/JSON-API-Common.git"
     }
   ],
   "autoload": {
@@ -28,7 +22,7 @@
   "require": {
     "php": ">=7.2",
     "ext-json": "*",
-    "enm/json-api-common": "dev-master",
+    "chris-doehring/json-api-common": "dev-master",
     "psr/http-factory": "^1.0",
     "psr/http-client": "^1.0"
   },
