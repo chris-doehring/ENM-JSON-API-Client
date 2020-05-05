@@ -55,7 +55,7 @@ class JsonApiTest extends TestCase
             $request->requestInclude('myRelationship');
 
             $this->assertEquals(
-                'http://example.com/myResources?sort=&filter%5Bname%5D=test&include=test%2CmyRelationship',
+                'http://example.com/myResources?filter%5Bname%5D=test&include=test%2CmyRelationship',
                 (string)$request->uri()
             );
         } catch (Throwable $e) {

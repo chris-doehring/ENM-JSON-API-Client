@@ -26,37 +26,37 @@ class JsonApiClient
     /**
      * @var string
      */
-    private $baseUrl;
+    protected $baseUrl;
 
     /**
      * @var ClientInterface
      */
-    private $httpClient;
+    protected $httpClient;
 
     /**
      * @var UriFactoryInterface
      */
-    private $uriFactory;
+    protected $uriFactory;
 
     /**
      * @var RequestFactoryInterface
      */
-    private $requestFactory;
+    protected $requestFactory;
 
     /**
      * @var StreamFactoryInterface
      */
-    private $streamFactory;
+    protected $streamFactory;
 
     /**
      * @var DocumentSerializerInterface
      */
-    private $serializer;
+    protected $serializer;
 
     /**
      * @var DocumentDeserializerInterface
      */
-    private $deserializer;
+    protected $deserializer;
 
     /**
      * @param string $baseUrl

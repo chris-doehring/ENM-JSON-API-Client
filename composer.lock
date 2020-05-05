@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf297812c93c0db6c4721c4dff1572c9",
+    "content-hash": "730d43391d24d77a9621197c21aff7d3",
     "packages": [
         {
-            "name": "chris-doehring/json-api-common",
+            "name": "chris-doehring/enm-json-api-common",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/chris-doehring/JSON-API-Common.git",
-                "reference": "c42e64925cde6b854bff1eaf0d21b494f30bfd40"
+                "url": "https://github.com/chris-doehring/ENM-JSON-API-Common.git",
+                "reference": "26ff666dc608c6103aaa72fb3570226613039c6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chris-doehring/JSON-API-Common/zipball/c42e64925cde6b854bff1eaf0d21b494f30bfd40",
-                "reference": "c42e64925cde6b854bff1eaf0d21b494f30bfd40",
+                "url": "https://api.github.com/repos/chris-doehring/ENM-JSON-API-Common/zipball/26ff666dc608c6103aaa72fb3570226613039c6d",
+                "reference": "26ff666dc608c6103aaa72fb3570226613039c6d",
                 "shasum": ""
             },
             "require": {
@@ -42,10 +42,14 @@
                 {
                     "name": "Philipp Marien",
                     "email": "marien@eosnewmedia.de"
+                },
+                {
+                    "name": "Chris Doehring",
+                    "email": "info@chrisdoehring.de"
                 }
             ],
             "description": "Basic php implementation (shared structures for client and server) of the json api specification (jsonapi.org)",
-            "time": "2020-04-20T10:10:13+00:00"
+            "time": "2020-05-05T16:22:55+00:00"
         },
         {
             "name": "psr/http-client",
@@ -520,23 +524,20 @@
         },
         {
             "name": "phpdocumentor/reflection-common",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionCommon.git",
-                "reference": "63a995caa1ca9e5590304cd845c15ad6d482a62a"
+                "reference": "6568f4687e5b41b054365f9ae03fcb1ed5f2069b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionCommon/zipball/63a995caa1ca9e5590304cd845c15ad6d482a62a",
-                "reference": "63a995caa1ca9e5590304cd845c15ad6d482a62a",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionCommon/zipball/6568f4687e5b41b054365f9ae03fcb1ed5f2069b",
+                "reference": "6568f4687e5b41b054365f9ae03fcb1ed5f2069b",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~6"
             },
             "type": "library",
             "extra": {
@@ -568,7 +569,7 @@
                 "reflection",
                 "static analysis"
             ],
-            "time": "2018-08-07T13:53:10+00:00"
+            "time": "2020-04-27T09:25:28+00:00"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -924,8 +925,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Utility class for timing",
@@ -986,16 +987,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "8.5.3",
+            "version": "8.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "67750516bc02f300e2742fed2f50177f8f37bedf"
+                "reference": "8474e22d7d642f665084ba5ec780626cbd1efd23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/67750516bc02f300e2742fed2f50177f8f37bedf",
-                "reference": "67750516bc02f300e2742fed2f50177f8f37bedf",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/8474e22d7d642f665084ba5ec780626cbd1efd23",
+                "reference": "8474e22d7d642f665084ba5ec780626cbd1efd23",
                 "shasum": ""
             },
             "require": {
@@ -1065,7 +1066,17 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2020-03-31T08:52:04+00:00"
+            "funding": [
+                {
+                    "url": "https://phpunit.de/donate.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/sebastianbergmann",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-04-23T04:39:42+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -1631,8 +1642,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Collection of value objects that represent the types of the PHP type system",
@@ -1738,6 +1749,20 @@
                 "polyfill",
                 "portable"
             ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-02-27T09:26:54+00:00"
         },
         {
@@ -1773,8 +1798,8 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 }
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
@@ -1832,7 +1857,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "chris-doehring/json-api-common": 20
+        "chris-doehring/enm-json-api-common": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
@@ -1840,5 +1865,6 @@
         "php": ">=7.2",
         "ext-json": "*"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }

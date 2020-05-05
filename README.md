@@ -1,13 +1,15 @@
 JSON API Client
 ===============
-[![Build Status](https://travis-ci.org/eosnewmedia/JSON-API-Client.svg?branch=master)](https://travis-ci.org/eosnewmedia/JSON-API-Client) 
+[![Build Status](https://travis-ci.org/chris-doehring/ENM-JSON-API-Client.svg?branch=master)](https://travis-ci.org/chris-doehring/ENM-JSON-API-Client) 
 
 Abstract client-side PHP implementation of the [json api specification](http://jsonapi.org/format/).
+
+It's based on the [original creation](https://github.com/eosnewmedia/JSON-API-Client) of the [eosnewmedia team](https://github.com/eosnewmedia) and the maintainer [Philipp Marien](https://github.com/pmarien).
 
 ## Installation
 
 ```sh
-composer require enm/json-api-client
+composer require chris-doehring/enm-json-api-client
 ```
 
 It's recommended to install `kriswallsmith/buzz` as http-client and `nyholm/psr7` for http factories.
@@ -19,7 +21,7 @@ composer require kriswallsmith/buzz nyholm/psr7
 You can also use any HTTP client which implements [PSR-18](https://www.php-fig.org/psr/psr-18/).
 
 ## Usage
-First you should read the docs at [enm/json-api-common](https://eosnewmedia.github.io/JSON-API-Common/) where all basic structures are defined.
+First you should read the docs at [chris-doehring/enm-json-api-common](https://github.com/chris-doehring/ENM-JSON-API-Common/tree/master/docs) where all basic structures are defined.
 
 Your API client is an instance of `Enm\JsonApi\Client\JsonApiClient`, which requires a PSR-18 HTTP client (`Psr\Http\Client\ClientInterface`) to execute requests.
 
