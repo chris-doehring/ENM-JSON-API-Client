@@ -29,14 +29,9 @@ class HttpResponse implements ResponseInterface
      */
     private $document;
 
-    /** @var PsrResponseInterface */
+    /** @var PsrResponseInterface|null */
     protected $psrResponse;
 
-    /**
-     * @param int $status
-     * @param array $headers
-     * @param DocumentInterface|null $document
-     */
     public function __construct(int $status, array $headers, ?DocumentInterface $document, ?PsrResponseInterface $psrResponse = null)
     {
         $this->status = $status;
