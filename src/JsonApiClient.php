@@ -151,10 +151,13 @@ class JsonApiClient
 
         $httpResponse = $this->httpClient->sendRequest($httpRequest);
 
+        $responseBody = $httpResponse->getBody()->getContents();
+        $httpResponse->getBody()->rewind();
         $response = new HttpResponse(
             $httpResponse->getStatusCode(),
             $httpResponse->getHeaders(),
-            $this->createResponseBody($httpResponse->getBody()->getContents())
+            $this->createResponseBody($responseBody),
+            $httpResponse
         );
 
         if ($exceptionOnFatalError && $response->status() >= 400) {

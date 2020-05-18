@@ -7,6 +7,7 @@ use Enm\JsonApi\Model\Common\KeyValueCollection;
 use Enm\JsonApi\Model\Common\KeyValueCollectionInterface;
 use Enm\JsonApi\Model\Document\DocumentInterface;
 use Enm\JsonApi\Model\Response\ResponseInterface;
+use Psr\Http\Message\ResponseInterface as PsrResponseInterface;
 
 /**
  * @author Philipp Marien <marien@eosnewmedia.de>
@@ -28,12 +29,10 @@ class HttpResponse implements ResponseInterface
      */
     private $document;
 
-    /**
-     * @param int $status
-     * @param array $headers
-     * @param DocumentInterface|null $document
-     */
-    public function __construct(int $status, array $headers, ?DocumentInterface $document)
+    /** @var PsrResponseInterface|null */
+    protected $psrResponse;
+
+    public function __construct(int $status, array $headers, ?DocumentInterface $document, ?PsrResponseInterface $psrResponse = null)
     {
         $this->status = $status;
         $this->headers = new KeyValueCollection();
@@ -45,6 +44,7 @@ class HttpResponse implements ResponseInterface
         }
 
         $this->document = $document;
+        $this->psrResponse = $psrResponse;
     }
 
     /**
@@ -69,5 +69,10 @@ class HttpResponse implements ResponseInterface
     public function document(): ?DocumentInterface
     {
         return $this->document;
+    }
+
+    public function psrResponse(): ?PsrResponseInterface
+    {
+        return $this->psrResponse;
     }
 }
