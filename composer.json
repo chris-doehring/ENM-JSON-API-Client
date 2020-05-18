@@ -1,5 +1,5 @@
 {
-  "name": "stixxx2k/json-api-client",
+  "name": "enm/json-api-client",
   "description": "Abstract client-side php implementation of the json api specification (jsonapi.org)",
   "type": "library",
   "license": "MIT",
