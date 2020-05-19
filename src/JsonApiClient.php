@@ -3,7 +3,8 @@ declare(strict_types=1);
 
 namespace Enm\JsonApi\Client;
 
-use Enm\JsonApi\Client\HttpClient\Response\HttpResponse;
+use Enm\JsonApi\Client\Factory\ResponseFactory;
+use Enm\JsonApi\Client\Factory\ResponseFactoryInterface;
 use Enm\JsonApi\Exception\HttpException;
 use Enm\JsonApi\Model\Document\DocumentInterface;
 use Enm\JsonApi\Model\Request\Request;
@@ -58,15 +59,9 @@ class JsonApiClient
      */
     protected $deserializer;
 
-    /**
-     * @param string $baseUrl
-     * @param ClientInterface $httpClient
-     * @param UriFactoryInterface $uriFactory
-     * @param RequestFactoryInterface $requestFactory
-     * @param StreamFactoryInterface $streamFactory
-     * @param DocumentSerializerInterface $serializer
-     * @param DocumentDeserializerInterface $deserializer
-     */
+    /** @var ResponseFactoryInterface */
+    protected $responseFactory;
+
     public function __construct(
         string $baseUrl,
         ClientInterface $httpClient,
@@ -74,7 +69,8 @@ class JsonApiClient
         RequestFactoryInterface $requestFactory,
         StreamFactoryInterface $streamFactory,
         DocumentSerializerInterface $serializer,
-        DocumentDeserializerInterface $deserializer
+        DocumentDeserializerInterface $deserializer,
+        ?ResponseFactoryInterface $responseFactory = null
     ) {
         $this->baseUrl = $baseUrl;
         $this->httpClient = $httpClient;
@@ -83,6 +79,7 @@ class JsonApiClient
         $this->streamFactory = $streamFactory;
         $this->serializer = $serializer;
         $this->deserializer = $deserializer;
+        $this->responseFactory = $responseFactory ?? new ResponseFactory($deserializer);
     }
 
     /**
@@ -150,15 +147,7 @@ class JsonApiClient
         }
 
         $httpResponse = $this->httpClient->sendRequest($httpRequest);
-
-        $responseBody = $httpResponse->getBody()->getContents();
-        $httpResponse->getBody()->rewind();
-        $response = new HttpResponse(
-            $httpResponse->getStatusCode(),
-            $httpResponse->getHeaders(),
-            $this->createResponseBody($responseBody),
-            $httpResponse
-        );
+        $response = $this->responseFactory->createResponse($httpResponse);
 
         if ($exceptionOnFatalError && $response->status() >= 400) {
             $message = 'Non successful http status returned (' . $response->status() . ').';
@@ -174,17 +163,6 @@ class JsonApiClient
         }
 
         return $response;
-    }
-
-    /**
-     * @param string|null $responseBody
-     * @return DocumentInterface|null
-     */
-    private function createResponseBody(?string $responseBody): ?DocumentInterface
-    {
-        $responseBody = (string)$responseBody !== '' ? json_decode($responseBody, true) : null;
-
-        return $responseBody ? $this->deserializer->deserializeDocument($responseBody) : $responseBody;
     }
 
     /**

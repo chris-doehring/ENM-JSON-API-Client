@@ -47,25 +47,16 @@ class HttpResponse implements ResponseInterface
         $this->psrResponse = $psrResponse;
     }
 
-    /**
-     * @return int
-     */
     public function status(): int
     {
         return $this->status;
     }
 
-    /**
-     * @return KeyValueCollectionInterface
-     */
     public function headers(): KeyValueCollectionInterface
     {
         return $this->headers;
     }
 
-    /**
-     * @return DocumentInterface|null
-     */
     public function document(): ?DocumentInterface
     {
         return $this->document;

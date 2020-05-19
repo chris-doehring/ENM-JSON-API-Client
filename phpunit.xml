@@ -7,7 +7,7 @@
          beStrictAboutOutputDuringTests="true"
          beStrictAboutTodoAnnotatedTests="true"
          verbose="true">
-    <testsuite name="JSON API CLient">
+    <testsuite name="JSON API Client">
         <directory suffix="Test.php">tests</directory>
     </testsuite>
 
