@@ -1,6 +1,11 @@
 JSON API Client
 ===============
-[![Build Status](https://travis-ci.org/chris-doehring/ENM-JSON-API-Client.svg?branch=master)](https://travis-ci.org/chris-doehring/ENM-JSON-API-Client) 
+[![Build Status](https://travis-ci.org/chris-doehring/ENM-JSON-API-Client.svg?branch=master)](https://travis-ci.org/chris-doehring/ENM-JSON-API-Client)
+[![Coverage Status](https://coveralls.io/repos/github/chris-doehring/ENM-JSON-API-Client/badge.svg?branch=master)](https://coveralls.io/github/chris-doehring/ENM-JSON-API-Client?branch=master)
+[![Total Downloads](https://poser.pugx.org/chris-doehring/enm-json-api-client/downloads)](https://packagist.org/packages/chris-doehring/enm-json-api-client)
+[![Latest Stable Version](https://poser.pugx.org/chris-doehring/enm-json-api-client/v/stable)](https://packagist.org/packages/chris-doehring/enm-json-api-client)
+[![Latest Unstable Version](https://poser.pugx.org/chris-doehring/enm-json-api-client/v/unstable.png)](https://packagist.org/packages/chris-doehring/enm-json-api-client)
+[![License](https://poser.pugx.org/chris-doehring/enm-json-api-client/license)](https://packagist.org/packages/chris-doehring/enm-json-api-client)
 
 Abstract client-side PHP implementation of the [json api specification](http://jsonapi.org/format/).
 

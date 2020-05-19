@@ -10,6 +10,9 @@ before_script:
 
 script: php vendor/bin/phpunit --coverage-text
 
+after_success:
+  - travis_retry php vendor/bin/php-coveralls
+
 notifications:
   email:
     - info@chrisdoehring.de
