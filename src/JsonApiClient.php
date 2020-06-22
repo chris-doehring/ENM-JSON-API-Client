@@ -150,16 +150,19 @@ class JsonApiClient
         $response = $this->responseFactory->createResponse($httpResponse);
 
         if ($exceptionOnFatalError && $response->status() >= 400) {
-            $message = 'Non successful http status returned (' . $response->status() . ').';
+            $e = new HttpException(
+                $response->status(),
+                'Non successful http status returned (' . $response->status() . ').'
+            );
 
             $document = $response->document();
             if ($document && !$document->errors()->isEmpty()) {
                 foreach ($document->errors()->all() as $error) {
-                    $message .= '\n' . $error->title();
+                    $e->errors()->add($error);
                 }
             }
 
-            throw new HttpException($response->status(), $message);
+            throw $e;
         }
 
         return $response;
