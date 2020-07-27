@@ -7,7 +7,6 @@
     "json",
     "api",
     "client",
-    "json:api",
     "psr-7",
     "psr-18"
   ],
