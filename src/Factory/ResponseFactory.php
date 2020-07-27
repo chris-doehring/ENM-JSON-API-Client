@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 namespace Enm\JsonApi\Client\Factory;
 
 use Enm\JsonApi\Client\HttpClient\Response\HttpResponse;
@@ -9,8 +11,7 @@ use Psr\Http\Message\ResponseInterface as PsrResponseInterface;
 
 class ResponseFactory implements ResponseFactoryInterface
 {
-    /** @var DocumentDeserializerInterface */
-    protected $deserializer;
+    protected DocumentDeserializerInterface $deserializer;
 
     public function __construct(DocumentDeserializerInterface $deserializer)
     {

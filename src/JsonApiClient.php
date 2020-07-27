@@ -24,43 +24,14 @@ use Throwable;
  */
 class JsonApiClient
 {
-    /**
-     * @var string
-     */
-    protected $baseUrl;
-
-    /**
-     * @var ClientInterface
-     */
-    protected $httpClient;
-
-    /**
-     * @var UriFactoryInterface
-     */
-    protected $uriFactory;
-
-    /**
-     * @var RequestFactoryInterface
-     */
-    protected $requestFactory;
-
-    /**
-     * @var StreamFactoryInterface
-     */
-    protected $streamFactory;
-
-    /**
-     * @var DocumentSerializerInterface
-     */
-    protected $serializer;
-
-    /**
-     * @var DocumentDeserializerInterface
-     */
-    protected $deserializer;
-
-    /** @var ResponseFactoryInterface */
-    protected $responseFactory;
+    protected string $baseUrl;
+    protected ClientInterface $httpClient;
+    protected UriFactoryInterface $uriFactory;
+    protected RequestFactoryInterface $requestFactory;
+    protected StreamFactoryInterface $streamFactory;
+    protected DocumentSerializerInterface $serializer;
+    protected DocumentDeserializerInterface $deserializer;
+    protected ResponseFactoryInterface $responseFactory;
 
     public function __construct(
         string $baseUrl,

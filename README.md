@@ -17,13 +17,13 @@ It's based on the [original creation](https://github.com/eosnewmedia/JSON-API-Cl
 composer require chris-doehring/enm-json-api-client
 ```
 
-It's recommended to install `kriswallsmith/buzz` as http-client and `nyholm/psr7` for http factories.
+It's recommended to install `guzzlehttp/guzzle` version `^7.0` as http-client and `http-interop/http-factory-guzzle` for PSR 17 compatible factories.
 
 ```sh
-composer require kriswallsmith/buzz nyholm/psr7
+composer require guzzlehttp/guzzle http-interop/http-factory-guzzle
 ```
 
-You can also use any HTTP client which implements [PSR-18](https://www.php-fig.org/psr/psr-18/).
+You can also use any other HTTP client which implements [PSR-18](https://www.php-fig.org/psr/psr-18/).
 
 ## Usage
 First you should read the docs at [chris-doehring/enm-json-api-common](https://github.com/chris-doehring/ENM-JSON-API-Common/tree/master/docs) where all basic structures are defined.

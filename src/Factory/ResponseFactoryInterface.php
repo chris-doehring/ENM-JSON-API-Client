@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 namespace Enm\JsonApi\Client\Factory;
 
 use Enm\JsonApi\Model\Response\ResponseInterface;

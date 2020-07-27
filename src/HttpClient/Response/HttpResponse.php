@@ -14,23 +14,10 @@ use Psr\Http\Message\ResponseInterface as PsrResponseInterface;
  */
 class HttpResponse implements ResponseInterface
 {
-    /**
-     * @var int
-     */
-    private $status;
-
-    /**
-     * @var KeyValueCollectionInterface
-     */
-    private $headers;
-
-    /**
-     * @var DocumentInterface|null
-     */
-    private $document;
-
-    /** @var PsrResponseInterface|null */
-    protected $psrResponse;
+    private int $status;
+    private KeyValueCollectionInterface $headers;
+    private ?DocumentInterface $document;
+    protected ?PsrResponseInterface $psrResponse;
 
     public function __construct(int $status, array $headers, ?DocumentInterface $document, ?PsrResponseInterface $psrResponse = null)
     {

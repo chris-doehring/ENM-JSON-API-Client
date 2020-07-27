@@ -6,7 +6,10 @@ namespace Enm\JsonApi\Client\Tests;
 use Enm\JsonApi\Client\JsonApiClient;
 use Enm\JsonApi\Serializer\DocumentDeserializerInterface;
 use Enm\JsonApi\Serializer\DocumentSerializerInterface;
-use Nyholm\Psr7\Factory\Psr17Factory;
+use GuzzleHttp\Psr7\Uri;
+use Http\Factory\Guzzle\RequestFactory;
+use Http\Factory\Guzzle\StreamFactory;
+use Http\Factory\Guzzle\UriFactory;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientInterface;
 use Throwable;
@@ -20,7 +23,7 @@ class JsonApiTest extends TestCase
     {
         try {
             $client = $this->createClient('http://example.com/api');
-            $request = $client->createGetRequest((new Psr17Factory())->createUri('/myResources/1'));
+            $request = $client->createGetRequest(new Uri('/myResources/1'));
 
             $this->assertEquals(
                 'http://example.com/api/myResources/1',
@@ -35,7 +38,7 @@ class JsonApiTest extends TestCase
     {
         try {
             $client = $this->createClient('http://example.com');
-            $request = $client->createGetRequest((new Psr17Factory())->createUri('/myResources'));
+            $request = $client->createGetRequest(new Uri('/myResources'));
 
             $this->assertEquals(
                 'http://example.com/myResources',
@@ -50,7 +53,7 @@ class JsonApiTest extends TestCase
     {
         try {
             $client = $this->createClient('http://example.com');
-            $request = $client->createGetRequest((new Psr17Factory())->createUri('/myResources?include=test'));
+            $request = $client->createGetRequest(new Uri('/myResources?include=test'));
             $request->addFilter('name', 'test');
             $request->requestInclude('myRelationship');
 
@@ -69,14 +72,12 @@ class JsonApiTest extends TestCase
      */
     protected function createClient(string $baseUri): JsonApiClient
     {
-        $psr17Factory = new Psr17Factory();
-        /** @noinspection PhpParamsInspection */
         return new JsonApiClient(
             $baseUri,
             $this->createMock(ClientInterface::class),
-            $psr17Factory,
-            $psr17Factory,
-            $psr17Factory,
+            new UriFactory(),
+            new RequestFactory(),
+            new StreamFactory(),
             $this->createMock(DocumentSerializerInterface::class),
             $this->createMock(DocumentDeserializerInterface::class)
         );
