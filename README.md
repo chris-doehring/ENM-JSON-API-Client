@@ -17,7 +17,7 @@ It's based on the [original creation](https://github.com/eosnewmedia/JSON-API-Cl
 composer require chris-doehring/enm-json-api-client
 ```
 
-It's recommended to install `guzzlehttp/guzzle` version `^7.0` as http-client and `http-interop/http-factory-guzzle` for PSR 17 compatible factories.
+It's recommended to install `guzzlehttp/guzzle` version `^7.0` as http-client and `http-interop/http-factory-guzzle` for [PSR-17](https://www.php-fig.org/psr/psr-17/) compatible factories.
 
 ```sh
 composer require guzzlehttp/guzzle http-interop/http-factory-guzzle
