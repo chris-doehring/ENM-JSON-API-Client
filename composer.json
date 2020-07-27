@@ -3,6 +3,14 @@
   "description": "Abstract client-side php implementation of the json api specification (jsonapi.org)",
   "type": "library",
   "license": "MIT",
+  "keywords": [
+    "json",
+    "api",
+    "client",
+    "json:api",
+    "psr-7",
+    "psr-18"
+  ],
   "authors": [
     {
       "name": "Philipp Marien",
