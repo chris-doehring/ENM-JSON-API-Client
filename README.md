@@ -26,7 +26,7 @@ composer require guzzlehttp/guzzle http-interop/http-factory-guzzle
 You can also use any other HTTP client which implements [PSR-18](https://www.php-fig.org/psr/psr-18/).
 
 ## Usage
-First you should read the docs at [chris-doehring/enm-json-api-common](https://github.com/chris-doehring/ENM-JSON-API-Common/tree/master/docs) where all basic structures are defined.
+First you should read the docs at [chris-doehring/enm-json-api-common](https://github.com/chris-doehring/ENM-JSON-API-Common/tree/5.x/docs) where all basic structures are defined.
 
 Your API client is an instance of `Enm\JsonApi\Client\JsonApiClient`, which requires a [PSR-18](https://www.php-fig.org/psr/psr-18/) HTTP client (`Psr\Http\Client\ClientInterface`) to execute requests.
 
