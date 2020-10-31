@@ -1,5 +1,8 @@
 ## Change Log
 
+## 6.1.0
+1. Add support for php `^8.0`
+
 ### 6.0.0
 1. Set the default php version constraint to `^7.4` and support typed properties
 1. Change the suggested HTTP client to guzzle 7
